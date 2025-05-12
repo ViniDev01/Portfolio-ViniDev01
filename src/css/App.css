@@ -616,6 +616,68 @@ footer {
   color: var(--text-principal);
 }
 
+.footer-contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 20px 140px;
+  gap: 60px;
+}
+
+.footer-contato h2 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 54px;
+}
+
+.footer-contato .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+.footer-contato .icons .icon a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+
+  .box-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0F3460;
+    border-radius: 50%;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: var(--text-destaque);
+  }
+
+  span:first-of-type {
+    margin-top: 20px;
+    color: var(--text-principal);
+    font-weight: 600;
+  }
+
+  span {
+    color: #c9c9c9;
+  }
+}
+
+.footer-contato .icons .icon a:hover {
+  transform: scale(1.3);
+}
+
 
 
 

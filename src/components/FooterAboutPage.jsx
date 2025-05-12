@@ -8,29 +8,29 @@ function FooterAboutPage() {
 
             <div className="icons">
                 <div className="icon">
-                    <a href="">
-                        <Mail />
+                    <a href="mailto:exemplo@email.com?subject=Assunto do e-mail&body=Olá, quero falar com você." target='_blank'>
+                        <div className='box-icon'><Mail /></div>
                         <span>E-mail</span>
                         <span>contato.viniciosss@gmail.com</span>
                     </a>
                 </div>
                 <div className="icon">
-                    <a href="www.linkedin.com/in/vinidev01">
-                        <Linkedin />
+                    <a href="https://www.linkedin.com/in/vinidev01/" target='_blank'>
+                        <div className='box-icon'><Linkedin /></div>
                         <span>Linkedin</span>
                         <span>@vinicios</span>
                     </a>
                 </div>
                 <div className="icon">
-                    <a href="https://github.com/ViniDev01">
-                        <Github />
+                    <a href="https://github.com/ViniDev01" target='_blank'>
+                        <div className='box-icon'><Github /></div>
                         <span>Github</span>
                         <span>@ViniDev01</span>
                     </a>
                 </div>
                 <div className="icon">
-                    <a href="">
-                        <img src={Whatsapp} alt='Whatsapp' />
+                    <a href="https://wa.me/5511945567985?text=Olá,%20gostaria%20de%20mais%20informações." target='_blank'>
+                        <div className='box-icon'><img src={Whatsapp} alt='Whatsapp' /></div>
                         <span>Whatsapp</span>
                         <span>11 945567985</span>
                     </a>
