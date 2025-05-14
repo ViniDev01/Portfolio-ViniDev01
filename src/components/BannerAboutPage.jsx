@@ -11,7 +11,8 @@ function BannerAbout() {
                 </div>
                 <div className="action">
                     <a href="" download="Meu-Curriculo.pdf">Download Cv</a>
-                    <a href="" target="_blank">Entrar em contato</a>
+                    <a href="https://mail.google.com/mail/?view=cm&to=contato.viniciosss@gmail.com&su=Assunto do e-mail&body=Olá, quero falar com você sobre:" target='_blank' className='hi-desktop'>Entrar em contato</a>
+                    <a href="mailto:contato.viniciosss@email.com?subject=Assunto do e-mail&body=Olá, quero falar com você sobre:" target='_blank' className='hi-mobile'>Entrar em contato</a>
                 </div>
             </div>
 

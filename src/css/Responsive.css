@@ -29,6 +29,25 @@
 
 }
 
+@media (max-width: 1000px) {
+    .banner-about {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 70px;
+    }
+
+    .intro {
+        align-items: center;
+    }
+
+    .intro .title h1,
+    .intro .title span,
+    .intro .title p {
+        display: block;
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
 
     /* Header */
@@ -137,11 +156,14 @@
         }
     }
 
-    .footer-contato .icons .icon a.hi-desktop {
+    .footer-contato .icons .icon a.hi-desktop,
+    .action a.hi-desktop {
         display: none;
     }
-    .footer-contato .icons .icon a.hi-mobile {
+    .footer-contato .icons .icon a.hi-mobile,
+    .action a.hi-mobile {
         display: flex;
+        justify-content: center;
     }
 
 }
@@ -199,6 +221,29 @@
             font-size: 1.4rem;
         }
     }
+
+    /* Page About */
+
+    .action {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .action a {
+        display: block;
+        width: 80%;
+        height: 50px;
+        text-align: center;
+        line-height: 32px;
+        font-size: 22px;
+    }
+
+    .profile a img{
+        width: 100%;    
+    }
+
 }
 
 @media (max-width: 440px) {
@@ -224,6 +269,12 @@
             height: 200px;
             object-fit: cover;
           }
+    }
+
+    /* Page About */
+    .about-text p,
+    .about-text h2 {
+        text-align: left;
     }
 }
 @media (max-width: 400px) {
@@ -284,6 +335,50 @@
         .projects-title {
             font-size: 10.5vw;
         }
+    }
+
+    /* Page About */
+
+    .banner-about {
+        padding: 50px 20px 100px;
+    }
+    .intro .title h1,
+    .intro .title span {
+        font-size: 11.3vw;
+        line-height: 100%;
+        margin-bottom: 20px;
+    }
+
+    .action a {
+        display: block;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 32px;
+        font-size: 6vw;
+    }
+
+    .about-text {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0px 20px;
+    }
+
+    .about-text h2 {
+        font-size: 12vw;
+    }
+
+    .about-text p {
+        font-size: 6vw;
+    }
+
+    .footer-contato h2 {
+        text-align: center;
+        font-size: 13vw;
+    }
+
+    .footer-contato .icons .icon:first-of-type   a span:nth-child(3){
+        font-size: 5vw;
     }
     
 }
