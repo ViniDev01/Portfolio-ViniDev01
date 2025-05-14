@@ -137,6 +137,13 @@
         }
     }
 
+    .footer-contato .icons .icon a.hi-desktop {
+        display: none;
+    }
+    .footer-contato .icons .icon a.hi-mobile {
+        display: flex;
+    }
+
 }
 
 @media (max-width: 581px) {

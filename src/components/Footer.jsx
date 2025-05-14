@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Instagram, Linkedin } from 'lucide-react';
 function Footer() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        }
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, [])
+    
     return (
         <footer>
             <div className="footer-content">
                 <h2>Entre em contato conosco</h2>
-                <a href="https://mail.google.com/mail/?view=cm&to=contato.viniciosss@gmail.com&su=Assunto do e-mail&body=Olá, quero falar com você." target="_blank">
-                    contato.viniciosss@gmail.com
-                </a>
+
+                {!isMobile ? (
+                    <a href="https://mail.google.com/mail/?view=cm&to=contato.viniciosss@gmail.com&su=Assunto do e-mail&body=Olá, quero falar com você sobre:" target="_blank" >
+                        contato.viniciosss@gmail.com
+                    </a>
+                ) : (
+                    <a href="mailto:contato.viniciosss@email.com?subject=Assunto do e-mail&body=Olá, quero falar com você sobre:" target="_blank">
+                        contato.viniciosss@gmail.com
+                    </a>
+                )}
+                
+                
 
                 <div className="socials">
                     <div className="logo">

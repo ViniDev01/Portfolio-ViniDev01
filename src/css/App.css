@@ -616,6 +616,8 @@ footer {
   color: var(--text-principal);
 }
 
+/* Footer do sobre mim */
+
 .footer-contato {
   display: flex;
   flex-direction: column;
@@ -672,6 +674,10 @@ footer {
   span {
     color: #c9c9c9;
   }
+}
+
+.footer-contato .icons .icon a.hi-mobile {
+  display: none;
 }
 
 .footer-contato .icons .icon a:hover {

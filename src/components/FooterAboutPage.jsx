@@ -8,7 +8,12 @@ function FooterAboutPage() {
 
             <div className="icons">
                 <div className="icon">
-                    <a href="mailto:exemplo@email.com?subject=Assunto do e-mail&body=Olá, quero falar com você." target='_blank'>
+                    <a href="https://mail.google.com/mail/?view=cm&to=contato.viniciosss@gmail.com&su=Assunto do e-mail&body=Olá, quero falar com você sobre:" target='_blank' className='hi-desktop'>
+                        <div className='box-icon'><Mail /></div>
+                        <span>E-mail</span>
+                        <span>contato.viniciosss@gmail.com</span>
+                    </a>
+                    <a href="mailto:contato.viniciosss@email.com?subject=Assunto do e-mail&body=Olá, quero falar com você sobre:" target='_blank' className='hi-mobile'>
                         <div className='box-icon'><Mail /></div>
                         <span>E-mail</span>
                         <span>contato.viniciosss@gmail.com</span>
