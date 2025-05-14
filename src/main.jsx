@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext'
+import { ProtectedRoute } from './context/ProtectedRoute'
 
 import App from './App.jsx'
 import About from './pages/About.jsx'
@@ -21,7 +22,7 @@ root.render(
           <Route path='/projects' element={<Projects />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/admin' element={<Admin />} />
+          <Route path='/admin' element={<ProtectedRoute> <Admin /> </ProtectedRoute>} />
         </Routes>
       </Router>
     </UserProvider>
