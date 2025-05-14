@@ -9,8 +9,10 @@ function About() {
             <div className="about-left">
                 <h2>Que tal me conhecer melhor?</h2>
 
-                <p>Sou um desenvolvedor front-end apaixonado por criar interfaces incríveis e funcionais. 
-                Com experiência em HTML, CSS, JavaScript e react estou sempre em busca de novos desafios e aprendizados.</p>
+                <p>
+                    Desenvolvedor Front-end especializado em criar experiências digitais rápidas, escaláveis 
+                    e com foco em performance, acessibilidade e design responsivo.
+                </p>
 
                 <Link to="/sobre" className="btn-about btn">Saiba mais </Link>
             </div>
