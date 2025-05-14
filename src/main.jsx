@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactDom from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ReactDOM from 'react-dom/client'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext'
 import { ProtectedRoute } from './context/ProtectedRoute'
 
@@ -11,7 +11,7 @@ import Contact from './pages/Contact.jsx'
 import Login from './pages/Login.jsx'
 import Admin from './pages/Admin.jsx'
 
-const root = ReactDom.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <UserProvider>
@@ -22,9 +22,9 @@ root.render(
           <Route path='/projects' element={<Projects />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/admin' element={<ProtectedRoute> <Admin /> </ProtectedRoute>} />
+          <Route path='/admin' element={<ProtectedRoute><Admin /></ProtectedRoute>} />
         </Routes>
       </Router>
     </UserProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
