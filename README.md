@@ -1,4 +1,4 @@
-# 💼 Portfólio Pessoal - [Seu Nome]
+# 💼 Portfólio Pessoal - [Vinicios]
 
 Bem-vindo ao meu portfólio pessoal! Este projeto foi criado para apresentar minhas habilidades, projetos, experiências e tecnologias que domino como desenvolvedor.
 
