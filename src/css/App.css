@@ -87,6 +87,7 @@ header {
 
 .nav-Mobile {
   display: none;
+  z-index: 1000;
 }
 /* Fim Header */
 

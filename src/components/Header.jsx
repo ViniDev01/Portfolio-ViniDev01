@@ -30,13 +30,15 @@ function Header() {
                 </nav>
 
                 <nav className="nav-Mobile">
-                    {isOpen ? (
-                        <X className="icon-close" onClick={closeMenu} style={{ right: isOpen ? "20px" : "768px" }}/>
-                    ) : (
+                    
                         <Menu className="icon-menu" onClick={toggleMenu} />
-                    )}
+                        
+                    
                     
                     <ul style={{ left: isOpen ? "0" : "768px" }}>
+                        
+                        <X className="icon-close" onClick={closeMenu} />
+                        
                         <li><NavLink to={`/`}><House /> Início</NavLink></li>
                         <li><NavLink to="/sobre"><UserSearch />Sobre</NavLink></li>
                         <li><NavLink to="/projects"><ScrollText /> Projetos</NavLink></li>
