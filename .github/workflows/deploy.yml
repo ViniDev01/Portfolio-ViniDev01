@@ -1,29 +1,50 @@
-name: Deploy to GitHub Pages
-
+name: Deploy via PR
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * 1'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-    
-    - name: Install dependencies
-      run: npm install
-    
-    - name: Build
-      run: npm run build
-    
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Check for Changes
+        id: check-changes
+        run: |
+          git fetch origin gh-pages
+          if [ -z "$(git diff --name-only origin/gh-pages ./dist)" ]; then
+            echo "skip_pr=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create PR
+        if: steps.check-changes.outputs.skip_pr != 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages-deploy
+          base: gh-pages
+          path: ./dist
+          labels: "deploy, automated"
+
+  cleanup:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Branch
+        if: github.event.pull_request.merged == true
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.git.deleteRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'heads/gh-pages-deploy'
+            });
