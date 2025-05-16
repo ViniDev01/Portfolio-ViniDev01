@@ -6,13 +6,25 @@ import { db } from "../firebase/firebase"; // Ajuste o caminho conforme necessá
 
 function Projects() {
     const [projects, setProjects] = useState([]);
+    const [isMobile, setIsMobile] = useState();
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        }
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    })
 
     useEffect(() => {
         const fetchProjects = async () => {
+            const queryLimit = isMobile ? 3 : 6;
             const q = query(
                 collection(db, "projects"),
                 orderBy("updatedAt", "desc"),
-                limit(6)
+                limit(queryLimit)
             )
 
             const querySnapshot = await getDocs(q);
@@ -25,7 +37,8 @@ function Projects() {
         }
 
         fetchProjects();
-    });
+    }, [isMobile]);
+
 
     return (
         <div className="projects">
